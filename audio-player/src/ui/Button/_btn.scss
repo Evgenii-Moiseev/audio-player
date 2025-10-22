@@ -1,0 +1,89 @@
+@use '../../styles/global/variables' as *;
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: transparent;
+  border-radius: 30px;
+  border: none;
+  padding: 10px 16px;
+  outline: none;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.01em;
+  color: $color-elephant;
+  white-space: nowrap;
+  cursor: pointer;
+
+  &:disabled {
+    pointer-events: none;
+  }
+
+  &--icon {
+    padding: 0;
+  }
+
+  &--icon-narrow {
+    padding: 20px 0;
+
+    @media (max-width: 479px) {
+      padding: 20px 0 20px 10px;
+    }
+  }
+
+  &__icon-info-desctop {
+    width: 23px;
+    height: 4px;
+
+    @media (max-width: 479px) {
+      display: none;
+    }
+  }
+
+  &__icon-info-mobile {
+    display: none;
+    width: 17px;
+    height: 4px;
+
+    @media (max-width: 479px) {
+      display: block;
+    }
+  }
+
+  &__favorite {
+    color: $color-silver-chalice;
+  }
+
+  &__favorite--active {
+    color: $color-burning-orange;
+  }
+
+  &--light-text {
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: 0.01em;
+    color: $color-silver-chalice;
+  }
+
+  &--primary {
+    background-color: $color-burning-orange;
+    color: $color-white;
+  }
+
+  &--secondary {
+    color: $color-elephant;
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+
+    &--S {
+      width: 14px;
+      height: 11px;
+    }
+  }
+}

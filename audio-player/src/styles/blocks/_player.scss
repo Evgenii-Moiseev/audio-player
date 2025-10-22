@@ -1,0 +1,216 @@
+@use '../global/variables' as *;
+@use '../global/mixins' as *;
+
+.player {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 20px;
+
+  @media (max-width: 479px) {
+    position: relative;
+  }
+
+  &__track {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    max-width: 434px;
+    width: 100%;
+    padding: 14px;
+
+    @include vp-767 {
+      max-width: 40%;
+    }
+
+    @media (max-width: 479px) {
+      position: absolute;
+      top: -14px;
+      left: 0;
+    }
+  }
+
+  &__track-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__track-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__track-title {
+    font-size: 14px;
+    line-height: 14px;
+    letter-spacing: 0.01em;
+    color: $color-cod-gray;
+  }
+
+  &__track-artist {
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: 0.01em;
+    color: $color-silver-chalice;
+  }
+
+  &__control {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    max-width: 681px;
+    width: 100%;
+    padding: 0 0 14px 0;
+
+    @media (max-width: 479px) {
+      align-items: flex-end;
+      gap: 36px;
+      padding: 0;
+    }
+  }
+
+  &__btns {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__skip-btn {
+    @media (max-width: 479px) {
+      display: none;
+    }
+  }
+
+  &__next-btn,
+  &__prev-btn {
+    @media (max-width: 479px) {
+      display: none;
+    }
+  }
+
+  &__progress {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    max-width: 681px;
+    width: 100%;
+  }
+
+  &__time {
+    font-size: 11px;
+    line-height: 14px;
+    letter-spacing: 0.01em;
+    color: $color-silver-chalice;
+  }
+
+  &__scale {
+    position: relative;
+    height: 4px;
+    background-color: $color-mercury;
+    border-radius: 75px;
+    cursor: pointer;
+    max-width: 609px;
+    width: 100%;
+  }
+
+  &__slider {
+    position: absolute;
+    height: 4px;
+    border-radius: 75px;
+    background-color: $color-burning-orange;
+  }
+
+  &__volume {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 0 0 14px 0;
+
+    @include vp-767 {
+      display: none;
+    }
+  }
+
+  &__volume-input {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 72px;
+    height: 4px;
+    background: $color-burning-orange;
+    border-radius: 39px;
+    outline: none;
+
+    &::-webkit-slider-runnable-track {
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(
+        to right,
+        $color-burning-orange 0%,
+        $color-burning-orange var(--thumb-position, 50%),
+        $color-mercury var(--thumb-position, 50%),
+        $color-mercury 100%
+      );
+      border-radius: 39px;
+    }
+
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 12px;
+      height: 12px;
+      background: $color-burning-orange;
+      border-radius: 50%;
+      cursor: pointer;
+      margin-top: -4px;
+      border: none;
+    }
+
+    &::-moz-range-track {
+      width: 100%;
+      height: 4px;
+      background: $color-mercury;
+      border-radius: 39px;
+    }
+    &::-moz-range-progress {
+      background-color: $color-burning-orange;
+      height: 4px;
+      border-radius: 39px;
+    }
+    &::-moz-range-thumb {
+      width: 12px;
+      height: 12px;
+      background: $color-burning-orange;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+    }
+
+    &::-ms-track {
+      width: 100%;
+      height: 4px;
+      background: transparent;
+      border-color: transparent;
+      color: transparent;
+    }
+    &::-ms-fill-lower {
+      background: $color-burning-orange;
+      border-radius: 39px;
+    }
+    &::-ms-fill-upper {
+      background: $color-mercury;
+      border-radius: 39px;
+    }
+    &::-ms-thumb {
+      width: 12px;
+      height: 12px;
+      background: $color-burning-orange;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      margin-top: 0;
+    }
+  }
+}

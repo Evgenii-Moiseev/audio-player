@@ -1,0 +1,29 @@
+@use '../global/variables' as *;
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 6px 0;
+  background-color: $color-white;
+  z-index: 100;
+
+  &::after {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    height: 1px;
+    width: 100%;
+    background-color: $color-mercury;
+
+    @media (max-width: 479px) {
+      display: none;
+    }
+  }
+
+  @media (max-width: 479px) {
+    padding: 14px 0 16px 0;
+  }
+}

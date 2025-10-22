@@ -1,0 +1,260 @@
+@use '../../styles/global/variables' as *;
+@use '../../styles/global/mixins' as *;
+
+.tracks {
+  max-width: 1074px;
+  width: 100%;
+  display: grid;
+  grid-template-rows: auto;
+
+  @media (max-width: 479px) {
+    gap: 20px;
+  }
+
+  &__heading {
+    padding: 7px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    text-align: left;
+    color: $color-silver-chalice;
+
+    &--added {
+      @include vp-1023 {
+        display: none;
+      }
+    }
+
+    &--album {
+      @media (max-width: 991px) {
+        display: none;
+      }
+    }
+  }
+
+  &__row {
+    position: relative;
+    display: grid;
+    grid-template-columns:
+      40px
+      minmax(0, 434px)
+      minmax(0, 262px)
+      minmax(0, 195px)
+      44px
+      56px
+      43px;
+    align-items: center;
+
+    &::after {
+      position: absolute;
+      content: '';
+      left: 0;
+      bottom: 0;
+      height: 1px;
+      width: 100%;
+      background-color: $color-mercury;
+
+      @media (max-width: 479px) {
+        display: none;
+      }
+    }
+
+    @media (max-width: 1365px) {
+      grid-template-columns:
+        40px
+        minmax(0, 434px)
+        minmax(0, 262px)
+        100px
+        44px
+        56px
+        43px;
+    }
+
+    @media (max-width: 1199px) {
+      grid-template-columns:
+        40px
+        minmax(0, 1fr)
+        minmax(0, 1fr)
+        80px
+        44px
+        56px
+        43px;
+    }
+
+    @include vp-1023 {
+      grid-template-columns:
+        40px
+        minmax(0, 2fr)
+        minmax(0, 1fr)
+        44px
+        56px
+        43px;
+    }
+
+    @media (max-width: 991px) {
+      grid-template-columns:
+        40px
+        minmax(0, 1fr)
+        44px
+        56px
+        43px;
+    }
+
+    @media (max-width: 479px) {
+      grid-template-columns:
+        minmax(0, 1fr)
+        24px
+        27px;
+      padding: 0 10px 0 0;
+      background-color: $color-white;
+    }
+
+    &--headings {
+      @media (max-width: 479px) {
+        display: none;
+      }
+    }
+  }
+
+  &__cell {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+
+    &--added {
+      @include vp-1023 {
+        display: none;
+      }
+    }
+
+    &--album {
+      @media (max-width: 991px) {
+        display: none;
+      }
+    }
+
+    &--index {
+      @media (max-width: 479px) {
+        display: none;
+      }
+    }
+
+    &--duration {
+      @media (max-width: 479px) {
+        display: none;
+      }
+    }
+
+    &--favorites {
+      @include vp-767 {
+        padding: 0;
+      }
+    }
+
+    &--info {
+      @include vp-767 {
+        padding: 0 0 0 4px;
+      }
+    }
+
+    @media (max-width: 479px) {
+      padding: 0;
+    }
+  }
+
+  &__index {
+    font-size: 20px;
+    line-height: 20px;
+    letter-spacing: 0.01em;
+    color: $color-cod-gray;
+  }
+
+  &__title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    max-width: 434px;
+    width: 100%;
+    cursor: pointer;
+  }
+
+  &__img {
+    width: 60px;
+    height: 60px;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    @include vp-767 {
+      gap: 4px;
+    }
+  }
+
+  &__title {
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.01em;
+    color: $color-cod-gray;
+
+    @include vp-767 {
+      font-size: 18px;
+      line-height: 22px;
+    }
+  }
+
+  &__artist {
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: 0.01em;
+    color: $color-silver-chalice;
+  }
+
+  &__album {
+    display: block;
+    max-width: 262px;
+    width: 100%;
+  }
+
+  &__added {
+    display: block;
+    max-width: 195px;
+    width: 100%;
+  }
+
+  &__duration,
+  &__added {
+    font-size: 14px;
+    line-height: 14px;
+    letter-spacing: 0.01em;
+    color: $color-silver-chalice;
+  }
+
+  &__duration--basic,
+  &__artist--basic {
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.01em;
+    color: $color-cod-gray;
+  }
+
+  &__track-card {
+    position: absolute;
+    top: 0;
+    right: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 12px;
+    border-radius: 10px;
+    background-color: $color-mercury;
+    z-index: 100;
+    -webkit-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+  }
+}

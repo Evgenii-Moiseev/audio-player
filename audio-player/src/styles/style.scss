@@ -1,0 +1,25 @@
+/* Global */
+/* ------------------- */
+@use 'global/_normalize';
+@forward 'global/_variables';
+@use 'global/_fonts';
+@use 'global/_reboot';
+@use 'global/_container';
+@use 'global/_visually-hidden';
+
+/* Blocks */
+/* ------------------- */
+@use '../components/Header/header';
+@use './blocks/search-field';
+@use '../ui/Button/btn';
+@use '../components/MainNav/main-nav';
+@use '../pages/MainPage/audio-tracks';
+@use '../pages/FavoritesPage/favorites';
+@use '../pages/ProfilePage/profile';
+@use '../components/Tracks/tracks';
+@use '../styles/blocks/footer';
+@use '../styles/blocks/player';
+@use '../components/Modal/modal';
+@use '../components/AuthForm/auth-form';
+@use '../styles/blocks/pagination';
+

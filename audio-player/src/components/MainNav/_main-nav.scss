@@ -1,0 +1,87 @@
+@use '../../styles/global/variables' as *;
+@use '../../styles/global/mixins' as *;
+
+.main-nav {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  width: 290px;
+  left: 0;
+  top: 0;
+  padding: 46px 30px;
+  min-height: calc(100vh - 69px);
+  background-color: $color-wild-sand;
+  z-index: 10;
+
+  @include vp-1023 {
+    padding: 46px 16px;
+    width: 250px;
+  }
+
+  @include vp-767 {
+    position: relative;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 30px;
+    min-height: auto;
+    padding: 20px 0;
+    width: 100%;
+    z-index: 1;
+  }
+
+  @media (max-width: 479px) {
+    gap: 19px;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 9px 30px;
+    margin: 0 -30px;
+    font-size: 20px;
+    line-height: 100%;
+    color: $color-elephant;
+
+    &.active {
+      background-color: $color-white;
+      pointer-events: none;
+
+      @include vp-767 {
+        background-color: $color-burning-orange;
+        color: $color-white;
+
+        .main-nav__icon--mobile {
+          display: block;
+        }
+      }
+    }
+
+    @include vp-767 {
+      padding: 10px 16px;
+      margin: 0;
+      border-radius: 30px;
+      background-color: $color-white;
+      font-size: 14px;
+      line-height: 24px;
+    }
+  }
+
+  &__icon {
+    &--desctop {
+      width: 32px;
+      height: 32px;
+
+      @include vp-767 {
+        display: none;
+      }
+    }
+
+    &--mobile {
+      display: none;
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
