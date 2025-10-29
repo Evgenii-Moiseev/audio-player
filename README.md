@@ -34,10 +34,10 @@
 
 ## Скриншоты
 Главная страница
-<img width="1018" height="1104" alt="Главная страница" src="https://github.com/user-attachments/assets/4a47b9c1-cffa-4774-adcc-b25ccc65ab18" />
+<img width="1020" height="1104" alt="Главная страница" src="https://github.com/user-attachments/assets/4a47b9c1-cffa-4774-adcc-b25ccc65ab18" />
 
 Страница "Избранное"
-<img width="1022" height="1104" alt="Страница Избранное" src="https://github.com/user-attachments/assets/ff50bfad-6988-428f-8589-68ccbba05831" />
+<img width="1020" height="1104" alt="Страница Избранное" src="https://github.com/user-attachments/assets/ff50bfad-6988-428f-8589-68ccbba05831" />
 
 Форма входа в аккаунт
-<img width="1017" height="1104" alt="Форма входа в аккаунт" src="https://github.com/user-attachments/assets/752d6417-6d6f-449f-83c9-a375ad222b28" />
+<img width="1020" height="1104" alt="Форма входа в аккаунт" src="https://github.com/user-attachments/assets/752d6417-6d6f-449f-83c9-a375ad222b28" />
